@@ -15,7 +15,7 @@ import agenda.model.repository.interfaces.RepositoryUser;
 public class RepositoryUserFile implements RepositoryUser{
 
 	private List<User> users;
-	private static final String filename = "bin\\files\\users.txt"; 
+	private static final String filename = "C:\\Users\\DELL\\Desktop\\3-ProiectAgenda\\ProiectAgenda\\files\\users.txt";
 	
 	public RepositoryUserFile() throws Exception 
 	{
@@ -59,6 +59,7 @@ public class RepositoryUserFile implements RepositoryUser{
 	public boolean changePasswd(User user, String oldPasswd, String newPasswd) {
 		int index = users.indexOf(user);
 		if (index < 0) return false;
+		this.save();
 		return users.get(index).setPassword(oldPasswd, newPasswd);
 	}
 

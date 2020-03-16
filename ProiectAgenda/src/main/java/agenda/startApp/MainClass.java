@@ -58,7 +58,7 @@ public class MainClass {
 						adaugContact(contactRep, in);
 						break;
 					case 2:
-						adaugActivitate(activityRep, contactRep, in, user);
+						adaugActivitate(activityRep, in, user);
 						break;
 					case 3:
 						afisActivitate(activityRep, in, user);
@@ -74,7 +74,7 @@ public class MainClass {
 			// System.out.println(a.toString());
 
 		} catch (Exception e) {
-
+			System.out.println(e.getMessage());
 		}
 		System.out.println("Program over and out\n");
 	}
@@ -108,8 +108,7 @@ public class MainClass {
 		}
 	}
 
-	private static void adaugActivitate(RepositoryActivity activityRep,
-			RepositoryContact contactRep, BufferedReader in, User user) {
+	private static void adaugActivitate(RepositoryActivity activityRep, BufferedReader in, User user) {
 		try {
 			System.out.printf("Adauga Activitate: \n");
 			System.out.printf("Descriere: ");

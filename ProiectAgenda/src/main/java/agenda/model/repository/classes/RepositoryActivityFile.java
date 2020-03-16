@@ -16,7 +16,7 @@ import agenda.model.repository.interfaces.RepositoryContact;
 
 public class RepositoryActivityFile implements RepositoryActivity{
 
-	private static final String filename = "bin\\files\\activities.dat"; 
+	private static final String filename = "C:\\Users\\DELL\\Desktop\\3-ProiectAgenda\\ProiectAgenda\\files\\activities.txt";
 	private List<Activity> activities;
 	
 	public RepositoryActivityFile(RepositoryContact repcon) throws Exception
@@ -113,7 +113,7 @@ public class RepositoryActivityFile implements RepositoryActivity{
 		for (Activity a : activities)
 			if (a.getName().equals(name) == false) result1.add(a);
 		List<Activity> result = new LinkedList<Activity>();
-		while (result1.size() >= 0 )
+		while (result1.size() >= 0 )//eroarea provine pt ca se lucreaza cu index
 		{
 			Activity ac = result1.get(0);
 			int index = 0;
@@ -123,7 +123,7 @@ public class RepositoryActivityFile implements RepositoryActivity{
 					index = i;
 					ac = result1.get(i);
 				}
-			
+
 			result.add(ac);
 			result1.remove(index);
 		}
